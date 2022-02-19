@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject HttpClient http;
 
 <PageTitle>Index</PageTitle>
 
@@ -6,4 +7,27 @@
 
 Welcome to your new app.
 
+<br/>
+
+@(content ?? "Content is null")
+
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    string? content;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+
+            content = await http.GetStringAsync("api/Function1");
+        }catch(Exception e)
+        {
+            Console.WriteLine("Error : " + e.Message);
+        }
+        
+        Console.WriteLine(content ?? "Content is null");
+    }
+}

@@ -18,6 +18,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "Api": {
+      "commandName": "Project",
+      "commandLineArgs": "start --cors *"
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
