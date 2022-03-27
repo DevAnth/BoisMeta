@@ -22,7 +22,7 @@ Welcome to your new app.
         try
         {
 
-            content = await http.GetStringAsync("api/Function1");
+            content = await http.GetStringAsync("weatherforecast");
         }catch(Exception e)
         {
             Console.WriteLine("Error : " + e.Message);
